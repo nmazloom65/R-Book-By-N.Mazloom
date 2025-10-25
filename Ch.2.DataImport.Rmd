@@ -1,0 +1,21 @@
+---
+title: "Season2-Import Data"
+author: "N. Mazloom"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r }
+options(repos = c(CRAN = "https://cran.r-project.org"))
+install.packages("readxl")
+install.packages("writexl")
+library(readxl)
+library(writexl)
+data <- read_excel("Book1-1.xlsx")
+head(data)
+head(data, n=10)
+str(data)
+summary(data)
+write.csv(data, "cleaned_soil_data.csv", row.names = FALSE)
+```
+
